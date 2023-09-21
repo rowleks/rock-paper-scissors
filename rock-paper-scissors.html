@@ -99,16 +99,19 @@
       total: 0
     }
 
+    // This function to display scores on the page
     function updateScoreElement() {
       document.querySelector('.js-score')
       .innerHTML = `Wins: ${score.wins} | Losses: ${score.losses} | Ties: ${score.ties} | Total Played: ${score.total}`
     }
   
+    // This function to display the moves and move pic on the page
     function movesElement (playerMove, computerMove) {
       document.querySelector('.js-moves')
       .innerHTML = `You <img class="move-icon "src="${playerMove}-emoji.png"> - <img class="move-icon" src="${computerMove}-emoji.png"> Computer`
     }
 
+  //This function to display the result on the page
     function resultElement (result) {
       document.querySelector('.js-result')
       .innerHTML = `${result}`
@@ -124,7 +127,7 @@
           return 'scissors';
         }
       }
-      
+
       function playGame(playerMove) {
         let result = '';
         let computerMove = pickComputerMove();
@@ -156,6 +159,8 @@
             result = 'Tie';
           }
         }
+
+        // conditions for the result
 
         if (result === 'You win') {
           score.wins += 1;
